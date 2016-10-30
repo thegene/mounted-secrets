@@ -12,7 +12,7 @@ RUN chown -R secrets /secrets /scripts /home/secrets
 # /home/secrets needed for keyring - easier to just make home dir
 
 ENV ENCRYPTED_SECRETS_FILE /encrypted/secrets.gpg
-ENV KEY_PATH /keys/testing
+ENV KEY_PATH /keys/secrets_key
 
 WORKDIR /scripts
 USER secrets
