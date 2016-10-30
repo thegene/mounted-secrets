@@ -1,5 +1,4 @@
 #!/bin/bash
-scriptname=`basename "$0"`
 echo "
 $SECRETS_VALUE
 "

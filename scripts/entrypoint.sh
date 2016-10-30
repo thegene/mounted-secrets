@@ -15,6 +15,4 @@
 # unset passphrase
 unset SECRETS_PASSPHRASE
 
-# handle file permissions
-
 exec $@
