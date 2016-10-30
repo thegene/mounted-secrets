@@ -1,0 +1,6 @@
+#!/bin/bash
+scriptname=`basename "$0"`
+echo "
+$SECRETS_VALUE
+"
+rm -f `echo "$(dirname "$0")/$(basename "$0")"`

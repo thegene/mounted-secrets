@@ -1,8 +1,5 @@
 #!/bin/bash
-
-echo "Decrypting $ENCRYPTED_SECRETS_FILE"
-echo $SECRETS_PASSPHRASE | \
-  gpg --passphrase-fd 0 \
-  --output /secrets/single-use-secrets.txt \
-  --batch --yes --no-tty \
-  --decrypt $ENCRYPTED_SECRETS_FILE 
+SECRETS_VALUE=`cat /secrets/single-use-secrets.txt` envsubst < template > secrets.sh
+chmod +x secrets.sh
+mv secrets.sh /secrets
+rm /secrets/single-use-secrets.txt
