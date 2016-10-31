@@ -2,17 +2,17 @@
 
 # check required ENV
 
-if [ -z $SECRETS_PASSPHRASE]; then
+if [ -z $SECRETS_PASSPHRASE ]; then
   echo "SECRETS_PASSPHRASE must be set";
   exit 1;
 fi
 
-if [ -z $ENCRYPTED_SECRETS_FILE]; then
+if [ -z $ENCRYPTED_SECRETS_FILE ]; then
   echo "ENCRYPTED_SECRETS_FILE must be set";
   exit 1;
 fi
 
-if [ -z $KEY_PATH]; then
+if [ -z $KEY_PATH ]; then
   echo "KEY_PATH must be set";
   exit 1;
 fi
@@ -24,7 +24,7 @@ if [ ! -f $KEY_PATH ]; then
 fi
 
 if [ ! -f $ENCRYPTED_SECRETS_FILE ]; then
-  echo "No encrypted secrets to decryptat $ENCRYPTED_SECRETS_FILE";
+  echo "No encrypted secrets to decrypt at $ENCRYPTED_SECRETS_FILE";
   exit;
 fi
 

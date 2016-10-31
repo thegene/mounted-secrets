@@ -16,4 +16,4 @@ ENV KEY_PATH /keys/secrets_key
 
 WORKDIR /scripts
 USER secrets
-CMD generate.sh
+CMD /scripts/generate.sh
