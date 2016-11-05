@@ -14,7 +14,7 @@ It uses a key located at `/keys/secrets_key` with GnuPG to decrypt a file locate
 The passphrase for the mounted secret key should be set with `SECRETS_PASSPHRASE`, which is unset after the script is built so it won't be available as an ENV var in the container.
 The subsequent secrets file is located at `/secrets/secrets.sh` and is intended to be executed by whatever container need them. The script `echo`'s the contents of the secrets file, so one could have it contain whatever ENV vars the container needs, so if your encrpyted secrets file contains `FOO=bar COLOR=blue` you could use it:
 ```
-env $(tr "\\n" " " < `secrets.sh`) some_command_needing_secret_env_vars
+env $(/secrets/secrets.sh | tr "\\n" " ") some_command_needing_secret_env_vars
 ```. This will prevent the secrets being set in ENV.
 
 # Example
