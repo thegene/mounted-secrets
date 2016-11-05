@@ -1,5 +1,3 @@
-.git
-README.md
 encrypted/*
 secrets/*
 keys/*
